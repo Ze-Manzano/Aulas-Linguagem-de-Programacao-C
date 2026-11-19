@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n, i;
+    float a1, r;
+    float pg[100];
+
+    printf("Numero de termos (max 100): ");
+    scanf("%d", &n);
+    printf("Primeiro termo (A1): ");
+    scanf("%f", &a1);
+    printf("Razao (R): ");
+    scanf("%f", &r);
+
+    pg[0] = a1;
+    for (i = 1; i < n; i++) {
+        pg[i] = pg[i - 1] * r;
+    }
+
+    printf("\nTermos da PG:\n");
+    for (i = 0; i < n; i++) {
+        printf("%.2f ", pg[i]);
+    }
+    printf("\n");
+
+    system("pause");
+    return 0;
+}
